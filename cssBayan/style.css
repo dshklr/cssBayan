@@ -1,8 +1,31 @@
+/* Accordion styles for mobile devices */
+@media screen and (max-width: 480px) {
+  .accordion-label {
+    font-size: 16px;
+  }
+}
+
+/* Accordion styles for tablet devices */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .accordion-label {
+    font-size: 24px;
+  }
+}
+
+/* Accordion styles for desktop devices */
+@media screen and (min-width: 1025px) {
+  .accordion-label {
+    font-size: 32px;
+  }
+}
+
+/* Common Accordion styles for all devices */
 .accordion {
   margin: 10px;
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .accordion-label {
@@ -12,7 +35,7 @@
   padding: 1em;
   font-weight: bold;
   cursor: pointer;
-  background: #333;
+  background: rgb(9, 136, 220);
   color: #fff;
 }
 
@@ -31,9 +54,12 @@
 .accordion-content {
   transform-origin: top;
   transform: scaleY(0);
+  height: 0;
+  overflow: hidden;
   padding: 0 1em;
   background: white;
-  transition: transform 0.35s;
+  text-align: center;
+  transition: transform 0.9s, height 0.9s;
 }
 
 .accordion:hover .accordion-label::before {
@@ -43,13 +69,10 @@
 
 .accordion:hover .accordion-content {
   transform: scaleY(1);
-}
-
-
-.accordion input {
-  display: none;
+  height: auto;
 }
 
 .image {
+  display: inline-block;
   width: 250px;
 }
